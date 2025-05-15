@@ -1,0 +1,15 @@
+[
+    {
+      "id": "hsp_001",
+      "question": "些細な環境の変化に敏感に反応する。",
+      "categories": ["HSP"],
+      "factors": ["internal"]
+    },
+    {
+      "id": "work_001",
+      "question": "職場での評価が常に気になってしまう。",
+      "categories": ["Work"],
+      "factors": ["external"]
+    }
+  ]
+  
