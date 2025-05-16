@@ -8,8 +8,17 @@ import { Button } from '@/components/ui/button';
 export default function QuestionnairePage() {
   const { answers, setAnswer } = useAnswerStore();
 
-  const handleSubmit = () => {
-    console.log('回答結果:', answers);
+  const handleSubmit = async () => {
+    console.log('送信するデータ:', answers);
+  
+    const res = await fetch('/api/submitResult', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(answers),
+    });
+  
+    const data = await res.json();
+    console.log('サーバーからの返事:', data);
   };
 
   return (
