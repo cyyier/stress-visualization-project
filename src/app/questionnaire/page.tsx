@@ -5,13 +5,16 @@ import { useAnswerStore } from '@/store/useAnswerStore';
 import { QuestionItem } from '@/components/QuestionItem';
 import { Button } from '@/components/ui/button';
 import { useRouter } from 'next/navigation';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function QuestionnairePage() {
   const { answers, setAnswer } = useAnswerStore();
+  const [ submitStatus, setSubmitStatus ] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const router = useRouter();
+  const isComplete = answers.length === questions.length;
 
   const handleSubmit = async () => {
+    setSubmitStatus('loading');
     console.log('送信するデータ:', answers);
   
     const res = await fetch('/api/submitResult', {
@@ -20,10 +23,14 @@ export default function QuestionnairePage() {
       body: JSON.stringify(answers),
     });
   
-    if (!res.ok) throw new Error('送信失敗');
+    if (!res.ok) {
+        setSubmitStatus('error');
+        return;
+      }
+      
     const data = await res.json();
     console.log('サーバーからの返事:', data);
-
+    setSubmitStatus('success');
     router.push('/result');
   };
 
@@ -49,8 +56,9 @@ export default function QuestionnairePage() {
         variant={"success"}
         className="mt-6"
         onClick={handleSubmit}
+        disabled={!isComplete || submitStatus === 'loading'}
       >
-        回答を送信
+        {submitStatus === 'loading' ? '送信中...' : '回答を送信'}
       </Button>
       <div className="mt-10 mb-4 text-sm text-muted-foreground">
         【選択肢の説明】
