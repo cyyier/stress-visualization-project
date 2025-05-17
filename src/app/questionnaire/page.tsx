@@ -4,9 +4,12 @@ import questions from '@/data/questions.json';
 import { useAnswerStore } from '@/store/useAnswerStore';
 import { QuestionItem } from '@/components/QuestionItem';
 import { Button } from '@/components/ui/button';
+import { useRouter } from 'next/navigation';
+import { useEffect } from 'react';
 
 export default function QuestionnairePage() {
   const { answers, setAnswer } = useAnswerStore();
+  const router = useRouter();
 
   const handleSubmit = async () => {
     console.log('送信するデータ:', answers);
@@ -17,9 +20,16 @@ export default function QuestionnairePage() {
       body: JSON.stringify(answers),
     });
   
+    if (!res.ok) throw new Error('送信失敗');
     const data = await res.json();
     console.log('サーバーからの返事:', data);
+
+    router.push('/result');
   };
+
+  useEffect(() => {
+    localStorage.setItem('latestResult', JSON.stringify(answers));
+  }, [answers]);
 
   return (
     <main className="p-6">
