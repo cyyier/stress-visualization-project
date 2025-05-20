@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import ResultChart from '@/components/resultChart';
 
 export default function ResultPage() {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -16,8 +17,16 @@ export default function ResultPage() {
 
   return (
     <main className="p-6">
-      <h1 className="text-2xl font-bold mb-4">あなたの回答結果</h1>
-      <pre className="bg-white p-4 rounded shadow text-sm">{JSON.stringify(results, null, 2)}</pre>
+      <h1 className="text-2xl font-bold mb-4">あなたのストレス</h1>
+      <ResultChart />
+      {/* <ul className="space-y-2">
+      {results.map((item) => (
+        <li key={item.id} className="bg-white p-3 rounded shadow">
+          <p className="font-medium">{item.id}</p>
+          <p>スコア: {item.score}</p>
+        </li>
+      ))}
+    </ul> */}
     </main>
   );
 }
