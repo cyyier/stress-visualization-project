@@ -1,15 +1,275 @@
 [
     {
-      "id": "hsp_001",
-      "question": "些細な環境の変化に敏感に反応する。",
-      "categories": ["HSP"],
-      "factors": ["internal"]
+        "id": "phq001",
+        "question": "最近、物事に興味を持てないと感じることがありましたか？",
+        "symptomType": "emotional",
+        "factor": "internal",
+        "externalType": null,
+        "relatedTo": {
+            "stress": 0.8,
+            "depression": 1.0,
+            "bpd": 0.2
+        },
+        "usage": [
+            "core",
+            "long"
+        ],
+        "timespan": "recent",
+        "sensitivity": "medium",
+        "polarity": "negative",
+        "direction": "inward",
+        "avoidIfSensitive": false,
+        "note": "うつ病の中核症状であり、ほとんどの診断基準に含まれる。BPDにおいても、空虚感や自己喪失感の一環として類似の感覚が現れる場合がある。"
     },
     {
-      "id": "work_001",
-      "question": "職場での評価が常に気になってしまう。",
-      "categories": ["Work"],
-      "factors": ["external"]
+        "id": "phq002",
+        "question": "最近、気分が沈んだり、落ち込んだりすることがありましたか？",
+        "symptomType": "emotional",
+        "factor": "internal",
+        "externalType": null,
+        "relatedTo": {
+            "stress": 0.8,
+            "depression": 1.0,
+            "bpd": 0.3
+        },
+        "usage": [
+            "core",
+            "long"
+        ],
+        "timespan": "recent",
+        "sensitivity": "medium",
+        "polarity": "negative",
+        "direction": "inward",
+        "avoidIfSensitive": false,
+        "note": "抑うつ状態の中核症状であり、診断上の重要項目。BPDにおいても気分の不安定さの一環として出現する可能性がある。"
+    },
+    {
+        "id": "phq003",
+        "question": "最近、寝つきが悪かったり、眠りすぎたりしていませんか？",
+        "symptomType": "physical",
+        "factor": "internal",
+        "externalType": null,
+        "relatedTo": {
+            "stress": 0.8,
+            "depression": 0.8,
+            "anxiety": 0.8,
+            "flammer": 0.1
+        },
+        "usage": [
+            "core",
+            "long"
+        ],
+        "timespan": "recent",
+        "sensitivity": "low",
+        "polarity": "neutral",
+        "direction": "ambiguous",
+        "avoidIfSensitive": false,
+        "note": "ストレスや抑うつ状態に広く見られる身体的反応。フラマー体質でも眠りが浅くなりやすい傾向がある。"
+    },
+    {
+        "id": "phq004",
+        "question": "最近、疲れやすさやエネルギーの低下を感じましたか？",
+        "symptomType": "physical",
+        "factor": "internal",
+        "externalType": null,
+        "relatedTo": {
+            "stress": 0.9,
+            "depression": 1.0,
+            "flammer": 0.2,
+            "anxiety": 0.3
+        },
+        "usage": [
+            "core",
+            "long"
+        ],
+        "timespan": "recent",
+        "sensitivity": "low",
+        "polarity": "neutral",
+        "direction": "ambiguous",
+        "avoidIfSensitive": false,
+        "note": "抑うつの代表的身体症状の一つであり、ストレス過多時にも頻出する。フラマー体質でも疲労傾向は見られるが、主訴とは異なる場合が多い。"
+    },
+    {
+        "id": "phq005a",
+        "question": "最近、食欲がわかない、あまり食べたくないと感じることはありましたか？",
+        "symptomType": "physical",
+        "factor": "internal",
+        "externalType": null,
+        "relatedTo": {
+            "depression": 1.0,
+            "stress": 0.9,
+            "anxiety": 0.4,
+            "eating_disorder": 0.2
+        },
+        "usage": [
+            "core",
+            "long"
+        ],
+        "timespan": "recent",
+        "sensitivity": "low",
+        "polarity": "neutral",
+        "direction": "ambiguous",
+        "avoidIfSensitive": false,
+        "note": "抑うつにおける代表的な身体症状。ストレス過多や強い不安でも食欲が低下することがある。摂食障害の初期兆候として現れる場合もあり、文脈に注意が必要。"
+    },
+    {
+        "id": "phq005b",
+        "question": "最近、つい食べすぎてしまい、コントロールできないように感じることはありましたか？",
+        "symptomType": "behavioral",
+        "factor": "internal",
+        "externalType": null,
+        "relatedTo": {
+            "bpd": 0.7,
+            "stress": 0.8,
+            "anxiety": 0.4,
+            "depression": 0.3,
+            "eating_disorder": 0.7
+        },
+        "usage": [
+            "core",
+            "long"
+        ],
+        "timespan": "recent",
+        "sensitivity": "medium",
+        "polarity": "negative",
+        "direction": "inward",
+        "avoidIfSensitive": true,
+        "note": "衝動性やストレス過多による過食傾向を問う項目。BPDや不安傾向、気分の浮き沈みに伴って出現することがある。摂食障害との関連も視野に入れる必要がある。"
+    },
+    {
+        "id": "phq006",
+        "question": "最近、自分に対して否定的な気持ちになることはありましたか？",
+        "symptomType": "emotional",
+        "factor": "internal",
+        "externalType": null,
+        "relatedTo": {
+            "stress": 0.9,
+            "depression": 1.0,
+            "bpd": 0.5,
+            "anxiety": 0.3
+        },
+        "usage": [
+            "core",
+            "long"
+        ],
+        "timespan": "recent",
+        "sensitivity": "medium",
+        "polarity": "negative",
+        "direction": "inward",
+        "avoidIfSensitive": true,
+        "note": "抑うつ診断基準にも含まれる重要な症状であり、ストレスが強い時期やBPD傾向の自己イメージ不安定性にも関係する。"
+    },
+    {
+        "id": "phq007",
+        "question": "最近、集中力が続かないと感じることがありましたか？",
+        "symptomType": "cognitive",
+        "factor": "internal",
+        "externalType": null,
+        "relatedTo": {
+            "stress": 0.9,
+            "depression": 0.8,
+            "adhd": 0.7,
+            "anxiety": 0.5
+        },
+        "usage": [
+            "core",
+            "long"
+        ],
+        "timespan": "recent",
+        "sensitivity": "low",
+        "polarity": "neutral",
+        "direction": "ambiguous",
+        "avoidIfSensitive": false,
+        "note": "ストレス・抑うつ状態・不安の影響によって集中困難が生じることがあり、ADHDの傾向とも関連があるが、診断用の質問文ではない。"
+    },
+    {
+        "id": "phq008a",
+        "question": "この2週間、以前より動作が遅くなったと感じることはありましたか？",
+        "symptomType": "behavioral",
+        "factor": "internal",
+        "externalType": null,
+        "relatedTo": {
+            "depression": 1.0,
+            "stress": 0.8
+        },
+        "usage": [
+            "core",
+            "long"
+        ],
+        "timespan": "recent",
+        "sensitivity": "low",
+        "polarity": "neutral",
+        "direction": "ambiguous",
+        "avoidIfSensitive": false,
+        "note": "抑うつや強いストレスにおいて見られる精神運動制止のサイン。全体的な活動量や反応速度の低下を含む。"
+    },
+    {
+        "id": "phq008b",
+        "question": "この2週間、じっとしていられない、落ち着かないと感じることはありましたか？",
+        "symptomType": "behavioral",
+        "factor": "internal",
+        "externalType": null,
+        "relatedTo": {
+            "adhd": 0.7,
+            "anxiety": 0.7,
+            "stress": 0.6,
+            "depression": 0.3,
+            "bipolar": 0.5
+        },
+        "usage": [
+            "long",
+            "screen"
+        ],
+        "timespan": "recent",
+        "sensitivity": "low",
+        "polarity": "negative",
+        "direction": "outward",
+        "avoidIfSensitive": false,
+        "note": "精神的緊張や衝動性が高まっている際に現れやすい。ADHDや不安傾向における代表的な行動反応。双極性障害の軽躁や混合状態の可能性にも注意が必要。"
+    },
+    {
+        "id": "phq009",
+        "question": "最近、「消えてしまいたい」と思ったり、自分を傷つけたい気持ちになったことはありますか？",
+        "symptomType": "emotional",
+        "factor": "internal",
+        "externalType": null,
+        "relatedTo": {
+            "depression": 1.0,
+            "bpd": 0.8,
+            "stress": 0.8,
+            "anxiety": 0.4
+        },
+        "usage": [
+            "core",
+            "long"
+        ],
+        "timespan": "recent",
+        "sensitivity": "high",
+        "polarity": "negative",
+        "direction": "inward",
+        "avoidIfSensitive": true,
+        "note": "うつ病やBPDにおける重度の情緒的苦痛を示唆する重要な項目。リスク評価のためのスクリーニングにも用いられる。文面の強さに配慮し、実装時には注意喚起が推奨される。"
+    },
+    {
+        "id": "bpd001",
+        "question": "親しい人間関係で、喧嘩や繰り返しの別れが多くあったことはありますか？",
+        "symptomType": "interpersonal",
+        "factor": "internal",
+        "externalType": null,
+        "relatedTo": {
+            "bpd": 1.0,
+            "stress": 0.6,
+            "depression": 0.3
+        },
+        "usage": [
+            "long",
+            "screen"
+        ],
+        "timespan": "trait",
+        "sensitivity": "medium",
+        "polarity": "negative",
+        "direction": "outward",
+        "avoidIfSensitive": true,
+        "note": "BPDの診断基準に含まれる対人関係の不安定性を問う中心的な項目。関係性の断絶・再接近の反復はBPD傾向の典型的な特徴の一つ。感情的爆発（outward）と回避・見捨て不安による離脱（inward）の両方が絡むが、設問構造としては外向的行動パターンに分類される。"
     }
-  ]
-  
+]
