@@ -41,13 +41,14 @@ export default function QuestionnairePage() {
     });
   
     if (!res.ok) {
+        console.log("エラーが発生しました");
         setSubmitStatus('error');
         return;
       }
       
     const data = await res.json();
     console.log('サーバーからの返事:', data);
-    setSubmitStatus('success');
+    setSubmitStatus('success');    
     router.push('/result'); // 結果ページへ遷移
   };
 

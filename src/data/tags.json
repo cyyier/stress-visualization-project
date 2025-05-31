@@ -1,0 +1,47 @@
+{
+    "InterestLoss": {
+        "label_ja": "興味の喪失",
+        "related_traits": ["Depression"],
+        "weight": {"Depression": 1.0}
+    },
+    "Mood": {
+        "label_ja": "気分の落ち込み",
+        "related_traits": ["Depression", "BPD"],
+        "weight": {"Depression": 1.0, "BPD": 0.7}
+    },
+    "Sleep": {
+        "label_ja": "睡眠",
+        "related_traits": ["Depression", "Anxiety"],
+        "weight": {"Depression": 1.0, "Anxiety": 0.5}
+    },
+    "Fatigue": {
+        "label_ja": "疲労",
+        "related_traits": ["Depression", "HSP"],
+        "weight": {"Depression": 1.0, "HSP": 0.6}
+    },
+    "Appetite": {
+        "label_ja": "食欲の変化",
+        "related_traits": ["Depression"],
+        "weight": {"Depression": 1.0}
+    },
+    "SelfWorth": {
+        "label_ja": "自己評価",
+        "related_traits": ["Depression", "BPD", "HSP"],
+        "weight": {"Depression": 1.0, "BPD": 0.8, "HSP": 0.5}
+    },
+    "Concentration": {
+        "label_ja": "集中力",
+        "related_traits": ["ADHD", "Depression", "Anxiety"],
+        "weight": {"ADHD": 1.0, "Depression": 0.6, "Anxiety": 0.5}
+    },
+    "Motor": {
+        "label_ja": "行動の変化",
+        "related_traits": ["Depression", "Anxiety"],
+        "weight": {"Depression": 1.0, "Anxiety": 0.4}
+    },
+    "SelfHarm": {
+        "label_ja": "自傷・希死念慮",
+        "related_traits": ["Depression", "BPD"],
+        "weight": {"Depression": 1.0, "BPD": 0.9}
+    }
+}
