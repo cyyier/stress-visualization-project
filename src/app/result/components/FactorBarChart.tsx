@@ -1,8 +1,4 @@
-import {
-    Tooltip,
-    TooltipTrigger,
-    TooltipContent,
-  } from "@/components/ui/tooltip";
+import { TooltipText } from "@/components/TooltipText";
   
   type Props = {
     data: { type: string; score: number }[];
@@ -15,22 +11,8 @@ import {
     return (
       <div className="w-full">
         <div className="flex justify-between mb-2 text-sm font-medium text-muted-foreground">
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <span>{internal.type} {internal.score}%</span>
-            </TooltipTrigger>
-            <TooltipContent>
-              <p>自分自身の特性や感情に由来するストレス</p>
-            </TooltipContent>
-          </Tooltip>
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <span>{external.type} {external.score}%</span>
-            </TooltipTrigger>
-            <TooltipContent>
-              <p>人間関係や環境など外部要因に由来するストレス</p>
-            </TooltipContent>
-          </Tooltip>
+          <TooltipText type="internal" label={`内的要因 ${internal.score}%`} />
+          <TooltipText type="external" label={`外的要因 ${external.score}%`} />
         </div>
         <div className="relative w-full h-6 rounded-full overflow-hidden bg-gray-200">
           <div
